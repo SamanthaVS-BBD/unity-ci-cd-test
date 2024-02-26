@@ -17,9 +17,9 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: test_game/Library
-          key: Library-${{ hashFiles('test_game/Assets/**', 'test_game/Packages/**', 'test_game/ProjectSettings/**') }}
+          key: test_game/Library-${{ hashFiles('test_game/Assets/**', 'test_game/Packages/**', 'test_game/ProjectSettings/**') }}
           restore-keys: |
-            Library-
+            test_game/Library-
 
       # Build
       - name: Build project
