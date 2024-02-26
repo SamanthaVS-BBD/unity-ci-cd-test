@@ -107,7 +107,11 @@ jobs:
           targetPlatform: WebGL
           projectPath: test_game
 
+      - name: List game_test directory
+        run: ls -l game_test
+
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
           path: game_test/game-build
+
