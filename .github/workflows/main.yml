@@ -52,6 +52,7 @@ jobs:
           testMode: ${{ matrix.testMode }}
           checkName: ${{ matrix.testMode }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectPath: test_game
 
       - uses: actions/upload-artifact@v2
         with:
