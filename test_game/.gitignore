@@ -193,3 +193,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Ignore temporaries from GameCI
+/[Aa]rtifacts/
+/[Cc]odeCoverage/
+

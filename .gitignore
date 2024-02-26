@@ -3,3 +3,7 @@
 server/.deployment
 unityGame/ProjectSettings/EditorBuildSettings.asset
 unityGame/.vscode/settings.json
+
+# Ignore temporaries from GameCI
+/[Aa]rtifacts/
+/[Cc]odeCoverage/
