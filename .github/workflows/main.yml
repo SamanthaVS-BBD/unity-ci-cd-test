@@ -97,6 +97,7 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: WebGL
+          projectPath: test_game
 
       - uses: actions/upload-artifact@v2
         with:
