@@ -1,3 +1,4 @@
+
 name: GameCI Template 🎮
 
 on: push
@@ -68,6 +69,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          lfs: true
 
       - name: Create LFS file list
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
