@@ -105,31 +105,9 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          projectPath: test_game/game-build
+          projectPath: test_game
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
           path: test_game/game-build
-
-  SaveToBuildFile:
-        needs: buildWebGL
-        name: Save to Game build file 🗂️
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v4
-            with:
-              fetch-depth: 2
-    
-          - name: Copy WebGL build to build folder
-            run: |
-              cp -r test_game/game-build/. test_game/game-build
-    
-          - name: Commit changes
-            run: |
-              git config --global user.email "github-actions[bot]@users.noreply.github.com"
-              git config --global user.name "github-actions[bot]"
-              git add test_game/game-build
-              git commit -m "Update WebGL build [skip ci]"
-              git push 
