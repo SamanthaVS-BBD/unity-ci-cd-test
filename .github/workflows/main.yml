@@ -111,3 +111,9 @@ jobs:
         with:
           name: build-WebGL
           path: test_game/game-build
+
+      - name: Create public folder
+        run: mkdir -p server/public
+
+      - name: Unzip artifact
+        run: unzip -o test_game/game-build -d server/public
