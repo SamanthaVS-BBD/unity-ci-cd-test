@@ -112,6 +112,12 @@ jobs:
           name: build-WebGL
           path: test_game
 
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-WebGL
+          path: test_game/game-build
+
       - name: Create public folder
         run: mkdir -p server/public
 
