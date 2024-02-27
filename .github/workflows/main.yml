@@ -107,19 +107,13 @@ jobs:
           targetPlatform: WebGL
           projectPath: test_game
 
+      - name: Create public folder
+        run: mkdir -p server/public
+
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
-          path: test_game/game-build
-
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build-WebGL
-          path: test_game/game-build
-
-      - name: Create public folder
-        run: mkdir -p server/public
+          path: server/public
 
       - name: List contents of test_game/game-build directory
         run: ls -la test_game/game-build
