@@ -110,7 +110,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
-          path: test_game/game-build
+          path: test_game
 
       - name: Create public folder
         run: mkdir -p server/public
