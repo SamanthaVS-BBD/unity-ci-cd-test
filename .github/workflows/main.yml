@@ -119,11 +119,8 @@ jobs:
         run: ls -la test_game/game-build
 
       - name: List contents of server directory
-        run: ls -la server
+        run: ls -la server/public
 
       - name: List contents of test_game directory
         run: ls -la test_game
-
-      - name: Unzip artifact
-        run: unzip -o test_game/game-build -d server/public
 
