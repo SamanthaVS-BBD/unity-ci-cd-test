@@ -105,10 +105,10 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          projectPath: test_game
+          projectPath: test_game/game-build
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
-          path: game-build
+          path: test_game/game-build
 
