@@ -126,3 +126,4 @@ jobs:
 
       - name: Unzip artifact
         run: unzip -o test_game/game-build -d server/public
+
