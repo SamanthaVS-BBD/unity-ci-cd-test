@@ -105,7 +105,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          projectPath: test_game/game-build
+          projectPath: test_game
 
       - name: Create public folder
         run: mkdir -p server/public
