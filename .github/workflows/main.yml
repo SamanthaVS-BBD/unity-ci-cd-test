@@ -105,22 +105,25 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          projectPath: test_game
+          projectPath: test_game/game-build
 
       - name: Create public folder
         run: mkdir -p server/public
 
-      - uses: actions/upload-artifact@v2
+      - name: Archive WebGL build artifacts
+        uses: actions/upload-artifact@v2
         with:
-          name: build-WebGL
-          path: server
+          name: WebGL artifacts
+          path: test_game/game-build
+
+      - name: Download WebGL build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: WebGL artifacts
+          path: server/public
 
       - name: List contents of test_game/game-build directory
         run: ls -la test_game/game-build
 
-      - name: List contents of server directory
-        run: ls -la server
-
-      - name: List contents of test_game directory
-        run: ls -la test_game
-
+      - name: List contents of server/public directory
+        run: ls -la server/public
