@@ -1,7 +1,10 @@
 
 name: Game test & build 🎮
 
-on: push
+on:
+  push:
+    branches:
+      - test_branch
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
