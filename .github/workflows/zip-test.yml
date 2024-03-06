@@ -1,0 +1,17 @@
+name: Zip folder
+
+on: [push]
+
+jobs:
+  zip-folder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Zip folder
+        run: |
+          zip -r server.zip server
+
+      - name: List folder contents
+        run: ls -l .
